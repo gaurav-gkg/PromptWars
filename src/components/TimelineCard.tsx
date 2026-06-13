@@ -18,11 +18,11 @@ export function TimelineCard({ timeline }: TimelineCardProps) {
   };
 
   return (
-    <section className="bg-[#ffffff] dark:bg-[#1a1c1c] rounded-[24px] border border-[#bfcaba]/40 shadow-[0_1px_3px_rgba(0,0,0,0.08)] p-md md:p-xl relative overflow-hidden">
+    <section className="bg-[#ffffff] dark:bg-[#1a1c1c] rounded-[24px] border border-[#bfcaba]/40 shadow-[0_1px_3px_rgba(0,0,0,0.08)] p-4 md:p-8 relative overflow-hidden">
       {/* Background structural line */}
       <div className="absolute left-[31px] top-[32px] bottom-[32px] w-[2px] bg-[#eeeeee] dark:bg-[#2f3131] hidden sm:block z-0" />
 
-      <div className="space-y-lg relative z-10">
+      <div className="space-y-6 relative z-10">
         {timeline.map((event, idx) => {
           const isDone = completedIds[idx] || false;
           // The active event is the first one that is NOT done
@@ -32,7 +32,7 @@ export function TimelineCard({ timeline }: TimelineCardProps) {
             <div 
               key={idx} 
               onClick={() => toggleEvent(idx)}
-              className="flex items-start gap-md cursor-pointer group"
+              className="flex items-start gap-4 cursor-pointer group"
             >
               {/* Timeline Indicator Badge */}
               <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-[#ffffff] dark:bg-[#1a1c1c] rounded-full z-10">
@@ -48,21 +48,21 @@ export function TimelineCard({ timeline }: TimelineCardProps) {
               </div>
 
               {/* Event details */}
-              <div className="flex-grow pt-1 border-b border-[#f3f3f3]/60 pb-md">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-xs">
+              <div className="flex-grow pt-1 border-b border-[#f3f3f3]/60 pb-4">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
                   <div>
                     <h4 className={`font-semibold text-lg transition-all ${
                       isDone ? "line-through text-[#707a6c] dark:text-[#bfcaba]/60" : "text-[#1a1c1c] dark:text-[#ffffff]"
                     }`}>
                       {event.task}
                     </h4>
-                    <p className={`text-sm transition-all mt-xs ${
+                    <p className={`text-sm transition-all mt-1 ${
                       isDone ? "text-[#707a6c]/80 dark:text-[#bfcaba]/40" : "text-[#40493d] dark:text-[#bfcaba]"
                     }`}>
                       {event.description}
                     </p>
                   </div>
-                  <div className={`font-medium text-xs px-sm py-xs rounded-md whitespace-nowrap transition-all ${
+                  <div className={`font-medium text-xs px-2 py-1 rounded-md whitespace-nowrap transition-all ${
                     isDone 
                       ? "text-[#707a6c] bg-[#f3f3f3] dark:bg-[#2f3131]" 
                       : isActive 
@@ -78,8 +78,8 @@ export function TimelineCard({ timeline }: TimelineCardProps) {
 
                 {/* Chef's tip for active element */}
                 {isActive && idx === 2 && (
-                  <div className="mt-md bg-[#cbffc2]/10 dark:bg-[#2e7d32]/10 rounded-lg p-md border border-[#0d631b]/20">
-                    <div className="flex items-center gap-sm mb-sm text-[#0d631b] dark:text-[#a3f69c]">
+                  <div className="mt-4 bg-[#cbffc2]/10 dark:bg-[#2e7d32]/10 rounded-lg p-4 border border-[#0d631b]/20">
+                    <div className="flex items-center gap-2 mb-2 text-[#0d631b] dark:text-[#a3f69c]">
                       <span className="material-symbols-outlined text-[18px]">tips_and_updates</span>
                       <span className="font-semibold text-xs">Chef's Glazing Tip</span>
                     </div>

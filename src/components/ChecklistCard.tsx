@@ -23,10 +23,10 @@ export function ChecklistCard({ initialTasks }: ChecklistCardProps) {
   const completionPercentage = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
 
   return (
-    <section className="bg-[#ffffff] dark:bg-[#1a1c1c] rounded-[24px] shadow-[0_1px_3px_rgba(0,0,0,0.08)] border border-[#bfcaba]/40 p-md md:p-xl flex flex-col gap-md">
+    <section className="bg-[#ffffff] dark:bg-[#1a1c1c] rounded-[24px] shadow-[0_1px_3px_rgba(0,0,0,0.08)] border border-[#bfcaba]/40 p-4 md:p-8 flex flex-col gap-4">
       <div>
-        <div className="flex justify-between items-center mb-sm">
-          <div className="flex items-center gap-sm">
+        <div className="flex justify-between items-center mb-2">
+          <div className="flex items-center gap-2">
             <span className="material-symbols-outlined text-[#0d631b] dark:text-[#a3f69c]">task_alt</span>
             <h3 className="font-semibold text-lg text-[#1a1c1c] dark:text-[#ffffff]">Actionable Cooking Checklist</h3>
           </div>
@@ -36,26 +36,26 @@ export function ChecklistCard({ initialTasks }: ChecklistCardProps) {
         </div>
 
         {/* Progress Bar */}
-        <div className="mt-sm">
+        <div className="mt-2">
           <div className="w-full bg-[#eeeeee] dark:bg-[#2f3131] rounded-full h-2.5 overflow-hidden">
             <div 
               className="bg-[#0d631b] dark:bg-[#a3f69c] h-2.5 rounded-full transition-all duration-300 ease-out"
               style={{ width: `${completionPercentage}%` }}
             />
           </div>
-          <div className="flex justify-between text-[11px] text-[#40493d] dark:text-[#bfcaba] mt-xs font-medium">
+          <div className="flex justify-between text-[11px] text-[#40493d] dark:text-[#bfcaba] mt-1 font-medium">
             <span>Kitchen Progress</span>
             <span>{completionPercentage}% Done</span>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-[#f3f3f3]/60 pt-md">
-        <ul className="space-y-sm">
+      <div className="border-t border-[#f3f3f3]/60 pt-4">
+        <ul className="space-y-2">
           {tasks.map((task) => (
             <li 
               key={task.id} 
-              className={`flex items-start gap-sm p-sm rounded-lg hover:bg-[#f3f3f3]/40 dark:hover:bg-[#2f3131]/30 transition-colors cursor-pointer ${
+              className={`flex items-start gap-2 p-2 rounded-lg hover:bg-[#f3f3f3]/40 dark:hover:bg-[#2f3131]/30 transition-colors cursor-pointer ${
                 task.isDone ? "opacity-60" : ""
               }`}
               onClick={() => toggleTask(task.id)}

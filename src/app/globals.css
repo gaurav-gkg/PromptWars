@@ -56,16 +56,6 @@
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
   --radius-2xl: 2rem;
-
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-  --spacing-2xl: 48px;
-  --spacing-container-margin-mobile: 16px;
-  --spacing-container-margin-desktop: 24px;
-  --spacing-gutter: 24px;
 }
 
 :root {

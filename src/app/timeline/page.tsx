@@ -25,11 +25,11 @@ export default function TimelinePage() {
 
   if (!activePlan || !activePreferences) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-md text-center bg-background dark:bg-[#121315]">
-        <div className="max-w-md p-lg bg-surface dark:bg-[#1f2022] rounded-2xl border border-outline-variant/50 shadow-sm flex flex-col items-center">
-          <span className="material-symbols-outlined text-[48px] text-[#ba1a1a] mb-sm">warning</span>
-          <h2 className="text-xl font-bold text-on-surface dark:text-[#ffffff] mb-xs">No active cooking plan found</h2>
-          <p className="text-sm text-on-surface-variant dark:text-[#bfcaba] mb-md">
+      <div className="min-h-screen flex items-center justify-center p-4 text-center bg-background dark:bg-[#121315]">
+        <div className="max-w-md p-6 bg-surface dark:bg-[#1f2022] rounded-2xl border border-outline-variant/50 shadow-sm flex flex-col items-center">
+          <span className="material-symbols-outlined text-[48px] text-[#ba1a1a] mb-2">warning</span>
+          <h2 className="text-xl font-bold text-on-surface dark:text-[#ffffff] mb-1">No active cooking plan found</h2>
+          <p className="text-sm text-on-surface-variant dark:text-[#bfcaba] mb-4">
             Please configure your schedule and ingredients in the planner first.
           </p>
           <Link href="/plan" className="bg-primary text-[#ffffff] px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-[#2e7d32] transition-colors">
@@ -67,8 +67,8 @@ export default function TimelinePage() {
       
       {/* TopNavBar */}
       <header className="bg-surface dark:bg-[#1f2022] shadow-sm sticky top-0 z-50 transition-colors">
-        <div className="flex justify-between items-center w-full px-container-margin-mobile md:px-container-margin-desktop max-w-7xl mx-auto h-16">
-          <div className="flex items-center gap-md">
+        <div className="flex justify-between items-center w-full px-4 md:px-6 max-w-7xl mx-auto h-16">
+          <div className="flex items-center gap-4">
             <Link 
               href="/results" 
               className="p-2 rounded-full hover:bg-surface-variant dark:hover:bg-[#2f3131] transition-colors text-on-surface"
@@ -79,7 +79,7 @@ export default function TimelinePage() {
             <div className="text-xl font-bold text-primary dark:text-[#a3f69c] tracking-tight">CookFlow AI</div>
           </div>
           
-          <div className="flex items-center gap-md">
+          <div className="flex items-center gap-4">
             {/* Dark Mode Toggle */}
             <button 
               onClick={() => setIsDark(!isDark)}
@@ -98,9 +98,9 @@ export default function TimelinePage() {
       </header>
 
       {/* Main Content Area */}
-      <main className="flex-grow w-full max-w-7xl mx-auto px-container-margin-mobile md:px-container-margin-desktop py-xl">
-        <div className="mb-xl text-center md:text-left">
-          <h1 className="text-[28px] md:text-[32px] font-bold text-on-surface dark:text-[#ffffff] mb-sm">
+      <main className="flex-grow w-full max-w-7xl mx-auto px-4 md:px-6 py-8">
+        <div className="mb-8 text-center md:text-left">
+          <h1 className="text-[28px] md:text-[32px] font-bold text-on-surface dark:text-[#ffffff] mb-2">
             Prep Timeline & Checklist
           </h1>
           <p className="text-sm md:text-[16px] text-on-surface-variant dark:text-[#bfcaba]">
@@ -109,11 +109,11 @@ export default function TimelinePage() {
         </div>
 
         {/* Dynamic Timeline/Checklist Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           
           {/* Chronological Prep Timeline */}
-          <div className="lg:col-span-7 flex flex-col gap-md">
-            <div className="flex items-center gap-xs border-b border-[#f3f3f3] pb-xs">
+          <div className="lg:col-span-7 flex flex-col gap-4">
+            <div className="flex items-center gap-1 border-b border-[#f3f3f3] pb-1">
               <span className="material-symbols-outlined text-[#0d631b] dark:text-[#a3f69c]">schedule</span>
               <h3 className="font-bold text-lg text-on-surface dark:text-[#ffffff]">Chronological Timeline</h3>
             </div>
@@ -121,8 +121,8 @@ export default function TimelinePage() {
           </div>
 
           {/* Interactive Cooking Checklist */}
-          <div className="lg:col-span-5 flex flex-col gap-md">
-            <div className="flex items-center gap-xs border-b border-[#f3f3f3] pb-xs">
+          <div className="lg:col-span-5 flex flex-col gap-4">
+            <div className="flex items-center gap-1 border-b border-[#f3f3f3] pb-1">
               <span className="material-symbols-outlined text-[#0d631b] dark:text-[#a3f69c]">checklist</span>
               <h3 className="font-bold text-lg text-on-surface dark:text-[#ffffff]">Kitchen Tasks Checklist</h3>
             </div>
